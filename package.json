@@ -1,0 +1,32 @@
+{
+  "name": "peer-client-service",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Oleh Mushka <olegamysk@gmail.com>",
+  "license": "ISC",
+  "keywords": [],
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn lint",
+    "preversion": "yarn lint",
+    "version": "yarn format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Actor-Gain-Network/peer-client-service.git"
+  },
+  "homepage": "https://github.com/Actor-Gain-Network/peer-client-service.git#readme",
+  "files": ["dist/**/*"],
+  "devDependencies": {
+    "prettier": "^2.0.5",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.8.3"
+  }
+}
